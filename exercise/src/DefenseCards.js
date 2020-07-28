@@ -15,7 +15,7 @@ export default ({ dataset }) => {
   } = dataset;
 
   return (
-    <div className="card col-4 py-2">
+    <div className="card col-12 py-2 px-2">
       <div className="card-title font-weight-bold pt-3">{title}</div>
       <div className="card-body">
         <dl>

@@ -21,10 +21,12 @@ export default () => {
     <div className="py-4">
       <h1 id="defense">Defense Datasets</h1>
       {isLoading && <Spinner />}
-      {data &&
-        data.map((d) => {
-          return <DefenseCards dataset={d} />;
-        })}
+      <div className="container row py-5">
+        {data &&
+          data.map((d) => {
+            return <DefenseCards dataset={d} />;
+          })}
+      </div>
     </div>
   );
 };
