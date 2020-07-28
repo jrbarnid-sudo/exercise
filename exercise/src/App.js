@@ -9,16 +9,16 @@ function App() {
     <Router>
       <div className="container-fluid">
         <nav className="d-flex">
-          <a class="navbar-brand" href="/">
+          <a className="navbar-brand" href="/">
             Exercise
           </a>
 
-          <div class="d-flex navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto list-group-horizontal">
-              <li class="nav-item px-4">
+          <div className="d-flex navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav mr-auto list-group-horizontal">
+              <li className="nav-item px-4">
                 <Link to="/defense">Defense</Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link to="/data">Data</Link>
               </li>
             </ul>
