@@ -4,8 +4,12 @@ export default () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {};
+    const fetchData = () => {};
   }, []);
 
-  return <div></div>;
+  return (
+    <div>
+      <h1 id="defense"></h1>
+    </div>
+  );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import { shallow, mount, render } from "enzyme";
+import Defense from "../Defense";
 
 function setup() {
   const props = {};
