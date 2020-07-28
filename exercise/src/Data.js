@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import DataTable from "./DataTable";
 
 export default () => {
   const [data, setData] = useState([]);
@@ -7,7 +8,7 @@ export default () => {
     const fetchData = async () => {
       const results = await (await fetch("/api/data")).json();
 
-      setData(results.dataset);
+      setData(results.result);
     };
 
     fetchData();
@@ -15,7 +16,8 @@ export default () => {
 
   return (
     <div className="py-4">
-      <h1 id="defense">Data Packages</h1>
+      <h1 id="data">Data Packages</h1>
+      <DataTable packages={data} />
     </div>
   );
 };
