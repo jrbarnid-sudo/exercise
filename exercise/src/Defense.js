@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import DefenseCards from "./DefenseCards";
+import Spinner from "./Spinner";
 
 export default () => {
   const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const results = await (await fetch("/api/defense")).json();
 
       setData(results.dataset);
+      setIsLoading(false);
     };
 
     fetchData();
@@ -17,6 +20,7 @@ export default () => {
   return (
     <div className="py-4">
       <h1 id="defense">Defense Datasets</h1>
+      {isLoading && <Spinner />}
       {data &&
         data.map((d) => {
           return <DefenseCards dataset={d} />;
