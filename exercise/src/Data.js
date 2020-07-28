@@ -25,7 +25,7 @@ export default () => {
     const fetchData = async () => {
       const results = await (await fetch("/api/data")).json();
 
-      setData(sortData(results.result, sort));
+      setData(results);
       setIsLoading(false);
     };
 
