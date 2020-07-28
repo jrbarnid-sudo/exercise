@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Defense from "./Defense";
+import Data from "./Data";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -28,6 +29,9 @@ function App() {
         <Switch>
           <Route path="/defense">
             <Defense />
+          </Route>
+          <Route path="/data">
+            <Data />
           </Route>
         </Switch>
       </div>

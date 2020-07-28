@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import DefenseCards from "./DefenseCards";
 
 export default () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const results = await (await fetch("/api/defense")).json();
+      const results = await (await fetch("/api/data")).json();
 
       setData(results.dataset);
     };
@@ -16,11 +15,7 @@ export default () => {
 
   return (
     <div className="py-4">
-      <h1 id="defense">Defense Datasets</h1>
-      {data &&
-        data.map((d) => {
-          return <DefenseCards dataset={d} />;
-        })}
+      <h1 id="defense">Data Packages</h1>
     </div>
   );
 };
