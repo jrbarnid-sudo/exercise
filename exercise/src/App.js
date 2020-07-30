@@ -25,6 +25,10 @@ function App() {
             </ul>
           </div>
         </nav>
+        <div className="container text-center">
+          <div>Welcome!</div>
+          <div>Select Defense or Data to see the results</div>
+        </div>
 
         <Switch>
           <Route path="/defense">
