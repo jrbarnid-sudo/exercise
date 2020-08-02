@@ -1,6 +1,11 @@
 const express = require("express");
 const app = express();
 const axios = require("axios");
+const cors = require("cors");
+
+app.use(cors());
+app.options('*', cors());
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/api/defense", async (req, res) => {
   try {
@@ -26,3 +31,5 @@ app.get("/api/data", async (req, res) => {
 });
 
 app.listen(8080);
+
+console.log('Listening on localhost:8080')

@@ -4,6 +4,8 @@ import Spinner from "./Spinner";
 
 export default () => {
   const sorts = { Asc: "asc", Desc: "desc" };
+  
+  const { REACT_APP_API_URL } = process.env;
 
   const sortData = (data, sort) => {
     switch (sort) {
@@ -23,7 +25,7 @@ export default () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const results = await (await fetch("/api/data")).json();
+      const results = await (await fetch(`${REACT_APP_API_URL}/api/data`)).json();
 
       setData(results);
       setIsLoading(false);
@@ -33,9 +35,12 @@ export default () => {
   }, []);
 
   useEffect(() => {
-    setData(sortData(data, sort));
-    setIsLoading(false);
-  }, [sort]);
+    if (data.length > 0) {
+      setData(sortData(data, sort));
+      setIsLoading(false);
+    }
+    // eslint-disable-next-line
+  }, [sort, data]);
 
   const _setSorts = (e, newSort) => {
     e.preventDefault();

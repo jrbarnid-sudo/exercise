@@ -6,9 +6,13 @@ export default () => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const { REACT_APP_API_URL } = process.env;
+
   useEffect(() => {
     const fetchData = async () => {
-      const results = await (await fetch("/api/defense")).json();
+      const url = `${REACT_APP_API_URL}/api/defense`;
+
+      const results = await (await fetch(url)).json();
 
       setData(results.dataset);
       setIsLoading(false);

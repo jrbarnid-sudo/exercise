@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+    ui:
+        image: exercise-ui:latest
+        restart: always
+        tty: true
+        environment:
+            REACT_APP_API_URL: http://localhost:8080
+        ports:
+            - "3000:3000"
+        volumes:
+            - /client
+            - /node_modules
+        links:
+            - server
+
+    server:
+        image: exercise-server:latest
+        restart: always
+        ports:
+            - "8080:8080"
+        volumes:
+            - ./server:/server
+            - /server/node_modules
